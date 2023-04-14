@@ -1,7 +1,6 @@
 window.onload = function() {
 
     let musica = new Audio("audio/nico.mp3");
-    musica.volume = "50%";
     let efeito1 = new Audio("audio/rolo.mp3");
     let numero1 = new Audio("audio/numb.mp3");
     let numero2 = new Audio("audio/numb.mp3");
