@@ -99,6 +99,9 @@ verde {
     color: beige;
     font-family: Bits;
 }
+#moeda {
+    margin-bottom: 80px;
+}
 #mute{
     position: absolute;
     bottom: 0;
