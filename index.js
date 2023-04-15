@@ -1,5 +1,6 @@
 window.onload = function() {
 
+    let estilo = document.getElementById("estilos");
     
     let musica = new Audio("audio/nico.mp3");
     let efeito1 = new Audio("audio/rolo.mp3");
@@ -21,10 +22,13 @@ window.onload = function() {
             musica.play();
             mute.innerHTML = "musica <verde>on<verde>";
             tocando = true;
+            estilo.href = "furia.css";
         } else {
             musica.muted = true;
             mute.innerHTML = "musica <vermelho>off<vermelho>";
             tocando = false;
+            estilo.href = "css.css";
+
         }
         console.log(tocando);
     }, false);
@@ -107,23 +111,18 @@ window.onload = function() {
         if(numeros[1] == numeros[0] ) {
             coluna1.style.color = "#F00";
             coluna2.style.color = "#F00";
-            coluna1.style.transform = "scale(1.3)";
-            coluna2.style.transform = "scale(1.3)";
 
         }
         if(numeros[2] == numeros[1] & numeros[2] == numeros[0]) {
             coluna3.style.color = "#F00";
-            coluna3.style.transform = "scale(1.3)";
         }
         if(numeros[3] == numeros[2] & numeros[3] == numeros[0]) {
             coluna4.style.color = "#F00";
-            coluna4.style.transform = "scale(1.3)";
         }
         let vitoria = numeros[0] + numeros[1] + numeros[2] + numeros[3];
         
         if(vitoria / 4 == numeros[0]) {
             let ganhar = function() {
-                //ganhou.style.transform = "scale(1) rotate(360deg)"
             }
             setTimeout(ganhar, 8200);
         }

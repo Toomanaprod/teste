@@ -13,7 +13,7 @@ body {
 }
 
 vermelho {
-    color: #d33;
+    color: #0f0;
 }
 
 verde {
@@ -23,7 +23,7 @@ verde {
 .main {
     width: 800px;
     height: 200px;
-    background: #0f0;
+    background: #f00;
     overflow: hidden;
     font-family: Bits;
     margin-top: 100px;
@@ -66,8 +66,8 @@ verde {
 .bloco {
     width: 196px;
     height: 196px;
-    background: #0f0;
-    border: 3px solid #0f0;
+    background: #f00;
+    border: 3px solid #f00;
 }
 .bloco h1{
     transition: .2s linear;
@@ -145,13 +145,13 @@ verde {
 }
 @keyframes pulsar {
     from {
-        -webkit-box-shadow: 6px -12px 300px -20px  #0f0;
-        -moz-box-shadow: 6px -12px 300px -20px  #0f0;
-        box-shadow: 6px -12px 300px -20px  #0f0;
+        -webkit-box-shadow: 6px -12px 300px -20px  #f00;
+        -moz-box-shadow: 6px -12px 300px -20px  #f00;
+        box-shadow: 6px -12px 300px -20px  #f00;
     }
     to{
-        -webkit-box-shadow: 6px -12px 300px -60px  #0f0;
-        -moz-box-shadow: 6px -12px 300px -60px  #0f0;
-        box-shadow: 6px -12px 300px -60px  #0f0;
+        -webkit-box-shadow: 6px -12px 300px -60px  #f00;
+        -moz-box-shadow: 6px -12px 300px -60px  #f00;
+        box-shadow: 6px -12px 300px -60px  #f00;
     }
 }
