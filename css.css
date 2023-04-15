@@ -90,9 +90,9 @@ verde {
 }
 
 #moeda, #jogar, #premio {
-    width: 250px;
-    padding: 20px;
-    font-size: 40px;
+    width: 100%;
+    padding: 20px 0px;
+    font-size: 80px;
     text-align: center;
     transform: translateY(50px);
     cursor: pointer;
