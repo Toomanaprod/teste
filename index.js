@@ -1,5 +1,6 @@
 window.onload = function() {
 
+    
     let musica = new Audio("audio/nico.mp3");
     let efeito1 = new Audio("audio/rolo.mp3");
     let numero1 = new Audio("audio/numb.mp3");
@@ -106,12 +107,17 @@ window.onload = function() {
         if(numeros[1] == numeros[0] ) {
             coluna1.style.color = "#F00";
             coluna2.style.color = "#F00";
+            coluna1.style.transform = "scale(1.3)";
+            coluna2.style.transform = "scale(1.3)";
+
         }
         if(numeros[2] == numeros[1] & numeros[2] == numeros[0]) {
             coluna3.style.color = "#F00";
+            coluna3.style.transform = "scale(1.3)";
         }
         if(numeros[3] == numeros[2] & numeros[3] == numeros[0]) {
             coluna4.style.color = "#F00";
+            coluna4.style.transform = "scale(1.3)";
         }
         let vitoria = numeros[0] + numeros[1] + numeros[2] + numeros[3];
         
