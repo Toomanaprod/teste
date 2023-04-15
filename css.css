@@ -27,7 +27,7 @@ verde {
     overflow: hidden;
     font-family: Bits;
     margin-top: 100px;
-    animation: pulsar 2s infinite alternate linear;
+    animation: pulsar 1.5s infinite alternate linear;
 }
 .rolo {
     width: 800px;
@@ -145,13 +145,13 @@ verde {
 }
 @keyframes pulsar {
     from {
-        -webkit-box-shadow: 6px -12px 300px -20px  #0f0;
-        -moz-box-shadow: 6px -12px 300px -20px  #0f0;
-        box-shadow: 6px -12px 300px -20px  #0f0;
+        -webkit-box-shadow: 6px -12px 350px -20px  #0f0;
+        -moz-box-shadow: 6px -12px 350px -20px  #0f0;
+        box-shadow: 6px -12px 350px -20px  #0f0;
     }
     to{
-        -webkit-box-shadow: 6px -12px 300px -60px  #0f0;
-        -moz-box-shadow: 6px -12px 300px -60px  #0f0;
-        box-shadow: 6px -12px 300px -60px  #0f0;
+        -webkit-box-shadow: 6px -12px 350px -60px  #0f0;
+        -moz-box-shadow: 6px -12px 350px -60px  #0f0;
+        box-shadow: 6px -12px 350px -60px  #0f0;
     }
 }
