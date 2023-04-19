@@ -32,7 +32,7 @@ blue {
     overflow: hidden;
     font-family: Bits;
     margin-top: 100px;
-    animation: pulsar 2s infinite alternate linear;
+    animation: pulsar 1.5s infinite alternate linear;
 }
 .rolo {
     width: 800px;
@@ -146,6 +146,7 @@ blue {
 }
 @keyframes pulsar {
     from {
+<<<<<<< HEAD
         -webkit-box-shadow: 6px -12px 500px -20px  #0f0;
         -moz-box-shadow: 6px -12px 500px -20px  #0f0;
         box-shadow: 6px -12px 500px -20px  #0f0;
@@ -172,3 +173,15 @@ blue {
     background: #F00;
     animation: pulsarfuria 2s infinite alternate linear;
 }
+=======
+        -webkit-box-shadow: 6px -12px 350px -20px  #0f0;
+        -moz-box-shadow: 6px -12px 350px -20px  #0f0;
+        box-shadow: 6px -12px 350px -20px  #0f0;
+    }
+    to{
+        -webkit-box-shadow: 6px -12px 350px -60px  #0f0;
+        -moz-box-shadow: 6px -12px 350px -60px  #0f0;
+        box-shadow: 6px -12px 350px -60px  #0f0;
+    }
+}
+>>>>>>> 27be80d91e312114d3dfb79af94ae1871d7e1c3a
