@@ -9,31 +9,15 @@ window.onload = function() {
     let numero3 = new Audio("audio/numb.mp3");
     let numero4 = new Audio("audio/numb.mp3");
 
-    musica.loop = true;
-    let tocando = false;
+    let h1bloco1 = document.querySelectorAll(".blocoh11");
+    for(a in h1bloco1) {
+        console.log(h1bloco1[a].innerHTML);
+    }
+    let h1bloco2 = document.querySelectorAll(".blocoh12");
+    let h1bloco3 = document.querySelectorAll(".blocoh13");
+    let h1bloco4 = document.querySelectorAll(".blocoh14");
 
-    let mute    = document.getElementById("mute");
 
-    mute.addEventListener('click', function() {
-
-        
-        if(!tocando) {
-            musica.muted = false;
-            musica.play();
-            mute.innerHTML = "musica <verde>on<verde>";
-            tocando = true;
-            estilo.href = "furia.css";
-        } else {
-            musica.muted = true;
-            mute.innerHTML = "musica <vermelho>off<vermelho>";
-            tocando = false;
-            estilo.href = "css.css";
-
-        }
-        console.log(tocando);
-    }, false);
-
-    
     let main    = document.getElementById("main");
     let coluna1 = document.getElementById("col1");
     let coluna2 = document.getElementById("col2");
@@ -46,10 +30,66 @@ window.onload = function() {
     let jogar   = document.getElementById("jogar");
     let temMoeda = false
 
-    let numeros;
-    let resultados = [];
+    let numeros = [];
+
+    let furia = document.getElementById("furia");
+    
+    let modofuria = false;
+    let cor;
+    let color;
+    if(modofuria) {
+        cor = "F00";
+        collor = "FF0"
+    } else {
+        cor = "0F0";
+        collor = "#F00"
+    }
+    musica.loop = true;
+    let tocando = false;
+
+    let mutar    = document.getElementById("mutar");
+
+    furia.onclick = function() {
+        if(!modofuria) {
+            main.classList.add("furia");
+            main.style.background = cor;
+            furia.innerHTML = "<vermelho>MODO FURIA</vermelho>";
+            if(temMoeda) {
+                jogar.style.color = "#f00";
+            }
+            modofuria = true
+        } else {
+            main.classList.remove("furia");
+            main.style.background = cor;
+            furia.innerHTML = "<verde>MODO NORMAL</verde>";
+            if(temMoeda) {
+                jogar.style.color = "#0f0";
+            }
+            modofuria = false;
+        }
+        console.log(modofuria);
+    }
+
+    mutar.addEventListener('click', function() {
+
+        if(!tocando) {
+            musica.muted = false;
+            musica.play();
+            musica.volume = .2;
+            mutar.innerHTML = "musica <verde>on</verde>";
+            tocando = true;
+        } else {
+            musica.muted = true;
+            mutar.innerHTML = "musica <vermelho>off</vermelho>";
+            tocando = false;
+
+        }
+    }, false);
+
+    
 
     jogar.style.color = "#777"
+    let podejogar = false;
     
     moeda.onclick = function() {
 
@@ -72,7 +112,12 @@ window.onload = function() {
 
 
         temMoeda = true;
-        jogar.style.color = "#0f0"
+        
+        if(!modofuria) {
+            jogar.style.color = "#0f0";
+        } else {
+            jogar.style.color = "f00";
+        }
 
 
     }
@@ -109,23 +154,47 @@ window.onload = function() {
 
 
         if(numeros[1] == numeros[0] ) {
-            coluna1.style.color = "#F00";
-            coluna2.style.color = "#F00";
+            coluna1.style.color = cor;
+            coluna2.style.color = cor;
+            coluna1.style.transform = "scale(1.3)";
+            coluna2.style.transform = "scale(1.3)";
 
         }
         if(numeros[2] == numeros[1] & numeros[2] == numeros[0]) {
-            coluna3.style.color = "#F00";
+                
+            coluna3.style.color = collor;
+            coluna3.style.transform = "scale(1.3)";
+
         }
         if(numeros[3] == numeros[2] & numeros[3] == numeros[0]) {
-            coluna4.style.color = "#F00";
+            coluna4.style.color = collor;
+            coluna4.style.transform = "scale(1.3)";
         }
-        let vitoria = numeros[0] + numeros[1] + numeros[2] + numeros[3];
+
+        let resultado = numeros[0] + numeros[1] + numeros[2] + numeros[3];
+
+        let furia = true;
         
-        if(vitoria / 4 == numeros[0]) {
-            let ganhar = function() {
-            }
-            setTimeout(ganhar, 8200);
+        let ganhar = function() {
+            //ganhou.style.transform = "scale(1.2)";
         }
+
+        if(resultado / 4 == numeros[0]) {
+           
+            setTimeout(ganhar, 8200);
+
+        }
+
+        if(modofuria & numeros[0] == numeros[1] & numeros[2] == numeros[3]) {
+
+                coluna1.style.color = collor;
+                coluna2.style.color = collor;
+                coluna3.style.color = collor;
+                coluna4.style.color = collor;
+
+            //setTimeout(ganhar, 8200);
+        }
+
         
         temMoeda = false;
         jogar.style.color = "#777";
@@ -136,7 +205,7 @@ window.onload = function() {
 
 
     function rolo(elemento) {
-        let numero  = Math.floor((Math.random() * 9) + 1);
+        let numero = Math.floor((Math.random() * 9) + 1);
         numeros.push(numero);
         console.log(numeros);
         switch(numero) {

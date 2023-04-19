@@ -9,21 +9,26 @@
 }
 body {
     background: #000;
-    min-width: 900px;
+    min-width: 800px;
+    transform: rotate3d(10, 10, 30, 0deg);
 }
 
 vermelho {
-    color: #d33;
+    color: #f00;
 }
 
 verde {
     color: #0f0;
 }
+blue {
+    color: #44BBFF;
+    z-index: 1;
+}
 
 .main {
     width: 800px;
     height: 200px;
-    background: #0f0;
+    background-color: #0f0;
     overflow: hidden;
     font-family: Bits;
     margin-top: 100px;
@@ -66,8 +71,7 @@ verde {
 .bloco {
     width: 196px;
     height: 196px;
-    background: #0f0;
-    border: 3px solid #0f0;
+    padding: 3px;
 }
 .bloco h1{
     transition: .2s linear;
@@ -76,17 +80,6 @@ verde {
     font-size: 100px;
     text-align: center;
     margin-top: 20px;
-}
-.limite1, .limite2 {
-    position: relative;
-    left: 0;
-    background: #000;
-    width: 800px;
-    height: 200px;
-    z-index: 1;
-}
-.limite2 {
-    margin-top: 200px;
 }
 
 #moeda, #jogar, #premio {
@@ -99,10 +92,17 @@ verde {
     color: beige;
     font-family: Bits;
 }
-#moeda {
-    margin-bottom: 80px;
+#furia {
+    color: beige;
+    width: 100%;
+    padding: 90px 0 10px 0;
+    font-size: 30px;
+    text-align: center;
+    transform: translateY(50px);
+    cursor: pointer;
+    font-family: Bits;
 }
-#mute{
+.mute{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -111,6 +111,7 @@ verde {
     cursor: pointer;
     color: beige;
     font-family: Bits;
+    z-index: 1;
 }
 #premio {
     font-size: 70px;
@@ -145,13 +146,29 @@ verde {
 }
 @keyframes pulsar {
     from {
-        -webkit-box-shadow: 6px -12px 300px -20px  #0f0;
-        -moz-box-shadow: 6px -12px 300px -20px  #0f0;
-        box-shadow: 6px -12px 300px -20px  #0f0;
+        -webkit-box-shadow: 6px -12px 500px -20px  #0f0;
+        -moz-box-shadow: 6px -12px 500px -20px  #0f0;
+        box-shadow: 6px -12px 500px -20px  #0f0;
     }
     to{
-        -webkit-box-shadow: 6px -12px 300px -60px  #0f0;
-        -moz-box-shadow: 6px -12px 300px -60px  #0f0;
-        box-shadow: 6px -12px 300px -60px  #0f0;
+        -webkit-box-shadow: 6px -12px 500px -60px  #0f0;
+        -moz-box-shadow: 6px -12px 500px -60px  #0f0;
+        box-shadow: 6px -12px 500px -60px  #0f0;
     }
+}
+@keyframes pulsarfuria {
+    from {
+        -webkit-box-shadow: 6px -12px 500px -20px  #f00;
+        -moz-box-shadow: 6px -12px 500px -20px  #f00;
+        box-shadow: 6px -12px 500px -20px  #f00;
+    }
+    to{
+        -webkit-box-shadow: 6px -12px 500px -60px  #f00;
+        -moz-box-shadow: 6px -12px 500px -60px  #f00;
+        box-shadow: 6px -12px 500px -60px  #f00;
+    }
+}
+.furia {
+    background: #F00;
+    animation: pulsarfuria 2s infinite alternate linear;
 }
