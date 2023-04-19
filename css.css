@@ -32,7 +32,6 @@ blue {
     overflow: hidden;
     font-family: Bits;
     margin-top: 100px;
-    animation: pulsar 2s infinite linear;
 }
 .rolo {
     width: 800px;
@@ -83,7 +82,7 @@ blue {
 }
 
 #moeda, #jogar, #premio {
-    width: 100%;
+    width: 170px;
     padding: 20px 0px;
     font-size: 80px;
     text-align: center;
@@ -95,19 +94,19 @@ blue {
 #furia {
     color: beige;
     width: 100%;
-    padding: 90px 0 10px 0;
     font-size: 30px;
     text-align: center;
-    transform: translateY(50px);
+    transform: translateY(200px);
     cursor: pointer;
     font-family: Bits;
 }
 .mute{
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     padding: 40px;
     text-align: center;
+    transform: translateY(160px);
     cursor: pointer;
     color: beige;
     font-family: Bits;
@@ -171,5 +170,4 @@ blue {
 }
 .furia {
     background: #F00;
-    animation: pulsarfuria 2s infinite linear;
 }

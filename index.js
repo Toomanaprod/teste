@@ -89,9 +89,15 @@ window.onload = function() {
     
 
     jogar.style.color = "#777"
-    let podejogar = false;
     
     moeda.onclick = function() {
+
+        if(!modofuria) {
+            jogar.style.color = "#0f0";
+        } else {
+            jogar.style.color = "#f00";
+        }
+
 
         coluna1.style.color = "#000"
         coluna2.style.color = "#000"
@@ -113,13 +119,7 @@ window.onload = function() {
 
         temMoeda = true;
         
-        if(!modofuria) {
-            jogar.style.color = "#0f0";
-        } else {
-            jogar.style.color = "f00";
-        }
-
-
+        
     }
 
     numb1 = function() {numero1.play()}
@@ -129,6 +129,20 @@ window.onload = function() {
 
     jogar.onclick = function() {
 
+        efeito1.volume = .2;
+
+        if(modofuria) {
+            main.style.animation = "pulsarfuria 2s 5 linear";
+        } else {
+            main.style.animation = "pulsar 2s 5 linear";
+        }
+
+        let parara = function() {
+            main.style.animation = "none";
+            efeito1.pause();
+            efeito1.currentTime = 0;
+
+        }
         
         coluna1.style.transition = "4s ease-out"
         coluna2.style.transition = "4.6s ease-out"
@@ -138,6 +152,9 @@ window.onload = function() {
         
 
         if(temMoeda) {
+
+            efeito1.play();
+            setTimeout(parara, 10000);
 
             setTimeout(numb1, 4000);
             setTimeout(numb2, 4600);
@@ -156,19 +173,15 @@ window.onload = function() {
         if(numeros[1] == numeros[0] ) {
             coluna1.style.color = cor;
             coluna2.style.color = cor;
-            coluna1.style.transform = "scale(1.3)";
-            coluna2.style.transform = "scale(1.3)";
 
         }
         if(numeros[2] == numeros[1] & numeros[2] == numeros[0]) {
                 
             coluna3.style.color = collor;
-            coluna3.style.transform = "scale(1.3)";
 
         }
         if(numeros[3] == numeros[2] & numeros[3] == numeros[0]) {
             coluna4.style.color = collor;
-            coluna4.style.transform = "scale(1.3)";
         }
 
         let resultado = numeros[0] + numeros[1] + numeros[2] + numeros[3];
