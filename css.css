@@ -32,7 +32,7 @@ blue {
     overflow: hidden;
     font-family: Bits;
     margin-top: 100px;
-    animation: pulsar 1.5s infinite alternate linear;
+    animation: pulsar 2s infinite linear;
 }
 .rolo {
     width: 800px;
@@ -103,7 +103,7 @@ blue {
     font-family: Bits;
 }
 .mute{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     padding: 40px;
@@ -112,6 +112,7 @@ blue {
     color: beige;
     font-family: Bits;
     z-index: 1;
+    margin-bottom: -75px;
 }
 #premio {
     font-size: 70px;
@@ -146,10 +147,9 @@ blue {
 }
 @keyframes pulsar {
     from {
-<<<<<<< HEAD
-        -webkit-box-shadow: 6px -12px 500px -20px  #0f0;
-        -moz-box-shadow: 6px -12px 500px -20px  #0f0;
-        box-shadow: 6px -12px 500px -20px  #0f0;
+        -webkit-box-shadow: 0 0 0 0  #0f0;
+        -moz-box-shadow: 0 0 0 0  #0f0;
+        box-shadow: 0 0 0 0  #0f0;
     }
     to{
         -webkit-box-shadow: 6px -12px 500px -60px  #0f0;
@@ -159,9 +159,9 @@ blue {
 }
 @keyframes pulsarfuria {
     from {
-        -webkit-box-shadow: 6px -12px 500px -20px  #f00;
-        -moz-box-shadow: 6px -12px 500px -20px  #f00;
-        box-shadow: 6px -12px 500px -20px  #f00;
+        -webkit-box-shadow: 0 0 0 0  #f00;
+        -moz-box-shadow: 0 0 0 0  #f00;
+        box-shadow: 0 0 0 0  #f00;
     }
     to{
         -webkit-box-shadow: 6px -12px 500px -60px  #f00;
@@ -171,17 +171,5 @@ blue {
 }
 .furia {
     background: #F00;
-    animation: pulsarfuria 2s infinite alternate linear;
+    animation: pulsarfuria 2s infinite linear;
 }
-=======
-        -webkit-box-shadow: 6px -12px 350px -20px  #0f0;
-        -moz-box-shadow: 6px -12px 350px -20px  #0f0;
-        box-shadow: 6px -12px 350px -20px  #0f0;
-    }
-    to{
-        -webkit-box-shadow: 6px -12px 350px -60px  #0f0;
-        -moz-box-shadow: 6px -12px 350px -60px  #0f0;
-        box-shadow: 6px -12px 350px -60px  #0f0;
-    }
-}
->>>>>>> 27be80d91e312114d3dfb79af94ae1871d7e1c3a
