@@ -126,6 +126,10 @@ window.onload = function() {
     numb2 = function() {numero2.play()}
     numb3 = function() {numero3.play()}
     numb4 = function() {numero4.play()}
+    numb1.volume = .6;
+    numb2.volume = .6;
+    numb3.volume = .6;
+    numb4.volume = .6;
 
     jogar.onclick = function() {
 
