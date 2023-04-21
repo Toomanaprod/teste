@@ -35,15 +35,7 @@ window.onload = function() {
     let furia = document.getElementById("furia");
     
     let modofuria = false;
-    let cor;
-    let color;
-    if(modofuria) {
-        cor = "F00";
-        collor = "FF0"
-    } else {
-        cor = "0F0";
-        collor = "#F00"
-    }
+    let collor;
     musica.loop = true;
     let tocando = false;
 
@@ -52,19 +44,19 @@ window.onload = function() {
     furia.onclick = function() {
         if(!modofuria) {
             main.classList.add("furia");
-            main.style.background = cor;
             furia.innerHTML = "<vermelho>MODO FURIA</vermelho>";
             if(temMoeda) {
                 jogar.style.color = "#f00";
             }
+            collor = "#ff0";
             modofuria = true
         } else {
             main.classList.remove("furia");
-            main.style.background = cor;
             furia.innerHTML = "<verde>MODO NORMAL</verde>";
             if(temMoeda) {
                 jogar.style.color = "#0f0";
             }
+            collor = "#f00";
             modofuria = false;
         }
         console.log(modofuria);
@@ -175,8 +167,8 @@ window.onload = function() {
 
 
         if(numeros[1] == numeros[0] ) {
-            coluna1.style.color = cor;
-            coluna2.style.color = cor;
+            coluna1.style.color = collor;
+            coluna2.style.color = collor;
 
         }
         if(numeros[2] == numeros[1] & numeros[2] == numeros[0]) {
@@ -222,7 +214,7 @@ window.onload = function() {
 
 
     function rolo(elemento) {
-        let numero = Math.floor((Math.random() * 9) + 1);
+        let numero = 2//Math.floor((Math.random() * 9) + 1);
         numeros.push(numero);
         console.log(numeros);
         switch(numero) {
