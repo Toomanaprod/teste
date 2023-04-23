@@ -67,7 +67,7 @@ window.onload = function() {
         if(!tocando) {
             musica.muted = false;
             musica.play();
-            musica.volume = .2;
+            musica.volume = .4;
             mutar.innerHTML = "musica <verde>on</verde>";
             tocando = true;
         } else {
@@ -125,7 +125,7 @@ window.onload = function() {
 
     jogar.onclick = function() {
 
-        efeito1.volume = .2;
+        efeito1.volume = .3;
 
         if(modofuria) {
             main.style.animation = "pulsarfuria 2s 5 linear";
