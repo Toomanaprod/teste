@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Objeto Girando com Frente Fixa e Linha de Conexão</title>
+</head>
+<body>
+    <canvas id="rotationCanvas" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById("rotationCanvas");
+        const ctx = canvas.getContext("2d");
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        let angle = 0;
+        const rotationSpeed = 2; // Velocidade de rotação em graus por quadro
+
+        function drawRotatingObject() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Calcula a posição do objeto girando emz torno do ponto fixo
+            const radius = 200; // Raio da órbita
+            const objectX = centerX + radius * Math.cos(angle * (Math.PI / 180));
+            const objectY = centerY + radius * Math.sin(angle * (Math.PI / 180));
+            console.log(objectX);
+            console.log(objectY);
+            // Salva o estado atual do contexto
+            ctx.save();
+
+            // Move o contexto para a posição do objeto
+            ctx.translate(objectX, objectY);
+
+            // Calcula o ângulo para a frente do objeto
+            const frontAngle = angle + 90; // 90 graus para a frente
+            ctx.rotate(frontAngle * (Math.PI / 180));
+
+            // Desenha o objeto girando com sua frente fixa
+            ctx.fillStyle = "blue";
+            ctx.fillRect(-10, -10, 20, 20);
+
+            // Restaura o estado do contexto
+            ctx.restore();
+
+            // Desenha uma linha de conexão entre o centro e o objeto
+            ctx.strokeStyle = "black";
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(objectX, objectY);
+            ctx.stroke();
+
+            // Atualiza o ângulo para a próxima posição
+            angle += rotationSpeed;
+
+            requestAnimationFrame(drawRotatingObject);
+        }
+
+        // Inicia a animação
+        drawRotatingObject();
+    </script>
+</body>
+</html>
