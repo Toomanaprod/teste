@@ -245,8 +245,19 @@ function getRays() {
     return ray;
   });
 }
-
+let control = document.getElementById('control');
+let control2 = document.getElementById('contro2');
+let control3 = document.getElementById('contro3');
 function movePlayer() {
+
+
+  imagem = esquerda;
+  player.angle -= toRadians(1);
+  player.x -= Math.sin(player.angle) * 1.5;
+  player.y += Math.cos(player.angle) * 1.5;
+  player.speed = 3;
+
+
     if (controles.length == 0) {
       imagem = frente;
     }
